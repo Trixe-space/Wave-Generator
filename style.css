@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --dark-background: #202020;
+    --light-background: #303030;
+}
+
+body {
+    color-scheme: dark;
+    background-color: var(--dark-background);
+    color: #FFFFFF;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+canvas {
+    width: 35%;
+    background-color: var(--light-background);
+    border-radius: 20px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.input-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+}
+
+input {
+    border: none;
+    background-color: var(--light-background);
+    height: 3em;
+    width: 5.5em;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+::-webkit-color-swatch {
+    border-radius: 6px;
+    border: none;
+}
