@@ -39,20 +39,12 @@ const drawGraph = () => {
     }
 
     for (let i = 0; i <= (canvas.width / ratio); i++) {
-        if (i * ratio == canvas.height / 2) {
-            c.beginPath()
-            c.moveTo(0, i * ratio)
-            c.lineTo(canvas.width, i * ratio)
-            c.lineWidth = 10
-            c.stroke()
-        } else {
             c.beginPath()
             c.moveTo(0, i * ratio)
             c.lineTo(canvas.width, i * ratio)
             c.strokeStyle = '#202020'
-            c.lineWidth = 3
+            c.lineWidth = i * ratio == canvas.height / 2 ? 10 : 3
             c.stroke()
-        }
     }
 }
 
