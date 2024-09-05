@@ -10,6 +10,9 @@ let amplitude = amplitudeInput.value
 let wavelength = wavelengthInput.value
 
 
+canvas.width = 1000 * Math.PI
+canvas.height = 600 * Math.PI
+
 colorInput.addEventListener('input', () => {
     color = colorInput.value
     drawWave()
@@ -26,25 +29,25 @@ wavelengthInput.addEventListener('input', () => {
 })
 
 
-const ratio = 100
+const cellSide = 100 * Math.PI
 
 const drawGraph = () => {
-    for (let i = 0; i <= canvas.width / ratio; i++) {
+    for (let i = 0; i < canvas.width / cellSide; i++) {
         c.beginPath()
-        c.moveTo(i * ratio, 0)
-        c.lineTo(i * ratio, canvas.height)
+        c.moveTo(i * cellSide, 0)
+        c.lineTo(i * cellSide, canvas.height)
         c.strokeStyle = '#202020'
-        c.lineWidth = 3
+        c.lineWidth = 10
         c.stroke()
     }
 
-    for (let i = 0; i <= (canvas.width / ratio); i++) {
-            c.beginPath()
-            c.moveTo(0, i * ratio)
-            c.lineTo(canvas.width, i * ratio)
-            c.strokeStyle = '#202020'
-            c.lineWidth = i * ratio == canvas.height / 2 ? 10 : 3
-            c.stroke()
+    for (let i = 0; i < canvas.height / cellSide; i++) {
+        c.beginPath()
+        c.moveTo(0, i * cellSide)
+        c.lineTo(canvas.width, i * cellSide)
+        c.strokeStyle = '#202020'
+        c.lineWidth = Math.floor(i * cellSide) == canvas.height / 2 ? 25 : 10
+        c.stroke()
     }
 }
 
