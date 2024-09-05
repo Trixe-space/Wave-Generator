@@ -54,8 +54,16 @@ const drawGraph = () => {
 const drawWave = () => {
     c.clearRect(0, 0, canvas.width, canvas.height)
     drawGraph()
+    
+    c.beginPath()
+    c.moveTo(0, canvas.height / 2)
 
-    console.log(color, amplitude, wavelength)
+    for (let x = 0; x < canvas.width; x++) {
+        c.lineTo(x, amplitude * cellSide * Math.sin(1 / (wavelength * 50) * x) + canvas.height / 2)
+    }
+
+    c.strokeStyle = color
+    c.stroke()
 }
 
 drawWave()
