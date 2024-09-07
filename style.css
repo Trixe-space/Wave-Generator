@@ -42,8 +42,8 @@ canvas {
 button {
     border: none;
     background-color: #0090FF;
-    padding-block: 0.5em;
-    padding-inline: 1em;
+    padding-block: 1em;
+    padding-inline: 1.5em;
     border-radius: 10px;
 }
 
