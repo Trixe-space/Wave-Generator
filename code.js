@@ -32,6 +32,9 @@ wavelengthInput.addEventListener('input', () => {
 const cellSide = 100 * Math.PI
 
 const drawGraph = () => {
+    c.fillStyle = '#303030'
+    c.fillRect(0, 0, canvas.width, canvas.height)
+
     for (let i = 0; i < canvas.width / cellSide; i++) {
         c.beginPath()
         c.moveTo(i * cellSide, 0)
@@ -67,3 +70,16 @@ const drawWave = () => {
 }
 
 drawWave()
+
+
+const pngDownload = document.getElementById('png-download')
+
+pngDownload.addEventListener('click', () => {
+    const imageURL = canvas.toDataURL()
+
+    const downloader = document.createElement('a')
+    downloader.href = imageURL
+    downloader.download = 'Wave'
+    downloader.click()
+    downloader.remove()
+})
