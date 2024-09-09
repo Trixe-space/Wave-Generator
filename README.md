@@ -1,8 +1,4 @@
-<div style="display: flex; justify-content: center;">
-
 ![Icon](favicon.svg)
-
-</div>
 
 # Wave Generator
 
